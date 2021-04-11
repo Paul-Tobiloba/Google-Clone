@@ -5,15 +5,29 @@
 }
 body {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    position: relative;
 }
 header {
     padding: 1.5em;
+    position: absolute;
+    justify-content: flex-end;
+    top: 0;
+    right: 0;
 }
 nav {
     display: flex;
     justify-content: space-around;
-    width: 20%;
-    margin-left: auto;
+    width: 100%;
+}
+nav a, nav img {
+    margin-left: 1em;
+    vertical-align: middle;
 }
 i, img {
     vertical-align: middle;
@@ -26,6 +40,7 @@ a {
     text-decoration: none;
 }
 a:hover {
+    opacity: 0.85;
     text-decoration: underline;
 }
 
@@ -34,18 +49,39 @@ a:hover {
 }
 main {
     width: 50%;
-    margin: 7em auto;
+    margin: auto;
     text-align: center;
 }
 .logo {
-    
-    height: 150px;
+    max-width: 50%;
+}
+.search {
+    width: 100%;
+    position: relative;
 }
 input {
-    width: 80%;
-    padding: 1em;
+    width: 100%;
+    padding: 1em 4em;
+    margin-top: 1em;
+    outline: none;
     border-radius: 30px;
-    border: 1px solid gray;
+    border: 1px solid rgb(221, 220, 220);
+}
+
+input:hover {
+    box-shadow: 0px 1px 4px 3px rgba(0, 0, 0, 0.1);
+}
+.fa-search, .fa-microphone {
+    position: absolute;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    color: gray;
+}
+.fa-search{
+    left: 25px;
+}
+.fa-microphone{
+    right: 25px;
 }
 
 .btn_container {
@@ -55,12 +91,28 @@ input {
     padding: 1em;
     margin: .5em;
     border: none;
+    outline: none;
+    user-select: none;
+    text-transform: capitalize;
 }
 .btn_container button:hover {
     cursor: pointer;
+    opacity: 0.85;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.languages {
+    display: flex;
+    justify-content: center;
+}
+.language-type a {
+    margin: .6em;
+    color: rgb(63, 16, 151);
 }
 footer {
-    background-color: rgb(240, 236, 236);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(240, 238, 238);
 }
 .footer_top {
     padding: 1em;
@@ -69,7 +121,7 @@ footer {
     padding: 1em;
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid gray;
+    border-top: 1px solid rgba(167, 166, 166, 0.856);
 }
 
 .left a {
